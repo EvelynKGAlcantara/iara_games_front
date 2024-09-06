@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Usuário - IaraGames</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav" class="nav-bar">
+        <div class="logo">
+          <img src="../image/logo.svg" alt="" width="130px" height="130px" />
+        </div>
+
+        <div class="nav-list" id="nav">
+          <button id="button_mob">
+            <span id="hamburgue"> </span>
+          </button>
+          <ul class="menu">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" class="active" id="home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listagem_usuarios.html"
+                >Listagem de Usuários</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastrar_usuarios.html"
+                >Cadastrar Usuário</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listagem_jogos.html"
+                >Listagem de Jogos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastrar_jogos.html"
+                >Cadastrar Jogos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="containerIara container mt-5">
+      <h2 id="formTitle">Editar Usuário</h2>
+      <form id="usuariosEdit">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" class="form-control" id="senha" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+    <script src="js/usuarios.js"></script>
+  </body>
+</html>

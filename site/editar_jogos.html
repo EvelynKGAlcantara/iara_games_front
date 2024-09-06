@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Jogos - IaraGames</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav" class="nav-bar">
+        <div class="logo">
+          <img src="../image/logo.svg" alt="" width="130px" height="130px" />
+        </div>
+
+        <div class="nav-list" id="nav">
+          <button id="button_mob">
+            <span id="hamburgue"> </span>
+          </button>
+          <ul class="menu">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" class="active" id="home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listagem_usuarios.html"
+                >Listagem de Usuários</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastrar_usuarios.html"
+                >Cadastrar Usuário</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listagem_jogos.html"
+                >Listagem de Jogos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastrar_jogos.html"
+                >Cadastrar Jogos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="containerIara container mt-5">
+      <h2 id="formTitle">Editar Jogos</h2>
+      <form id="jogosForm">
+        <div class="form-group">
+          <label for="nome">Nome do Jogo</label>
+          <input type="text" class="form-control" id="nome" required />
+        </div>
+        <div class="form-group">
+          <label for="tipoMidia">Tipo de Mídia</label>
+          <div>
+            <input
+              type="radio"
+              id="digital"
+              name="tipoMidia"
+              value="digital"
+              required
+            />
+            <label for="digital">Digital</label>
+            <input
+              type="radio"
+              id="fisico"
+              name="tipoMidia"
+              value="fisico"
+              required
+            />
+            <label for="fisico">Físico</label>
+            <input
+              type="radio"
+              id="ambos"
+              name="tipoMidia"
+              value="ambos"
+              required
+            />
+            <label for="ambos">Ambos</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="plataforma">Plataforma</label>
+          <input type="text" class="form-control" id="plataforma" required />
+        </div>
+        <div class="form-group">
+          <label for="fabricante">Fabricante</label>
+          <select class="form-control" id="fabricante" required>
+            <!-- Opções de fabricantes -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <select class="form-control" id="categoria" required>
+            <!-- Opções de categorias -->
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+    <footer>
+      <div class="logo-rodape">
+        <img src="../image/logo.svg" alt="Logo site" id="logo" width="225" />
+      </div>
+      <div class="caixa-rodape">
+        <h2 class="title-roda">Menu</h2>
+        <ul>
+          <li><a href="...">Home</a></li>
+          <li><a href="...">Loja de jogos</a></li>
+          <li><a href="...">Fórum</a></li>
+          <li><a href="...">Suporte</a></li>
+          <li><a href="...">Contato</a></li>
+        </ul>
+      </div>
+      <div class="caixa-rodape">
+        <h2 class="title-roda">Outros</h2>
+        <ul>
+          <li><a href="...">Nosso Blog Blog</a></li>
+          <li><a href="...">Privacidade</a></li>
+          <li><a href="...">Documentação</a></li>
+          <li><a href="...">Política de Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="caixa-rodape" id="social-rodape">
+        <h2 class="title-roda">Sigam as redes</h2>
+        <ul>
+          <li>
+            <button
+              class="bt-redes"
+              id="bt_1"
+              onclick="location.href='https://www.instagram.com/store_couplecake/';"
+              value="Go to instagram"
+            >
+              <i class="fa-brands fa-square-instagram"></i>
+            </button>
+            <button
+              class="bt-redes"
+              id="bt_2"
+              onclick="location.href='https://www.facebook.com/Couplecake-106421932083910?_rdc=1&_rdr/';"
+              value="Go to facebook"
+            >
+              <i class="fa-brands fa-facebook-square"></i>
+            </button>
+            <button
+              class="bt-redes"
+              id="bt_3"
+              onclick="location.href='https://api.whatsapp.com/send?phone=5511988592266&text=Ol%C3%A1%20quero%20ver%20o%20card%C3%A1pio/';"
+              value="Go to whatssap"
+            >
+              <i class="fa-brands fa-whatsapp-square"></i>
+            </button>
+            <button
+              class="bt-redes"
+              id="bt_4"
+              onclick="location.href='https://api.whatsapp.com/send?phone=5511988592266&text=Ol%C3%A1%20quero%20ver%20o%20card%C3%A1pio/';"
+              value="Go to whatssap"
+            >
+              <i class="fa-brands fa-square-twitter"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/78e3b8eb13.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jogos.js"></script>
+  </body>
+</html>
