@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Função para buscar e preencher os fabricantes
   function fetchFabricantes() {
-    fetch(
-      "https://iaragamesbackend-production-d2b5.up.railway.app/jogos/fabricantes"
-    )
+    fetch("http://localhost:8081/jogos/fabricantes")
       .then((response) => response.json())
       .then((data) => {
         const fabricanteSelect = document.getElementById("fabricante");
@@ -21,9 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Função para buscar e preencher as categorias
   function fetchCategorias() {
-    fetch(
-      "https://iaragamesbackend-production-d2b5.up.railway.app/jogos/categorias"
-    )
+    fetch("http://localhost:8081/jogos/categorias")
       .then((response) => response.json())
       .then((data) => {
         const categoriaSelect = document.getElementById("categoria");
@@ -41,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Função para buscar e preencher os usuários
   function fetchUsuarios() {
-    fetch("https://iaragamesbackend-production-d2b5.up.railway.app/usuario")
+    fetch("http://localhost:8081/usuario")
       .then((response) => response.json())
       .then((data) => {
         const usuarioSelect = document.getElementById("usuario");
@@ -82,16 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
       .getAttribute("data-editing");
     if (jogoId) {
       // Se está editando, faz um PUT para atualizar o jogo
-      fetch(
-        `https://iaragamesbackend-production-d2b5.up.railway.app/jogos/${jogoId}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(jogo),
-        }
-      )
+      fetch(`http://localhost:8081/jogos/${jogoId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jogo),
+      })
         .then((response) => {
           if (response.ok) {
             alert("Jogo atualizado com sucesso!");
@@ -108,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => console.error("Erro ao atualizar jogo:", error));
     } else {
       // Se não está editando, faz um POST para cadastrar um novo jogo
-      fetch("https://iaragamesbackend-production-d2b5.up.railway.app/jogos", {
+      fetch("http://localhost:8081/jogos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -131,9 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Função para carregar jogos
   async function loadJogos() {
-    const response = await fetch(
-      "https://iaragamesbackend-production-d2b5.up.railway.app/jogos"
-    );
+    const response = await fetch("http://localhost:8081/jogos");
     const jogos = await response.json();
     const jogosTableBody = document.getElementById("jogosTableBody");
     if (jogosTableBody) {
@@ -161,10 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função para deletar jogo
   window.deleteJogo = async function (id) {
     if (confirm("Tem certeza que deseja excluir?")) {
-      await fetch(
-        `https://iaragamesbackend-production-d2b5.up.railway.app/jogos/${id}`,
-        { method: "DELETE" }
-      );
+      await fetch(`http://localhost:8081/jogos/${id}`, { method: "DELETE" });
       loadJogos();
     }
   };
@@ -177,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Função para carregar dados do jogo para edição
   function fetchJogoData(id) {
-    fetch(`https://iaragamesbackend-production-d2b5.up.railway.app/jogos/${id}`)
+    fetch(`http://localhost:8081/jogos/${id}`)
       .then((response) => response.json())
       .then((jogo) => {
         document.getElementById("nome").value = jogo.nome;

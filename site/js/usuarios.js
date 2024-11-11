@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Função para carregar usuários
   async function loadUsuarios() {
-    const response = await fetch(
-      "https://iaragamesbackend-production-d2b5.up.railway.app/usuario"
-    );
+    const response = await fetch("http://localhost:8081/usuario");
     const usuarios = await response.json();
     usuariosTableBody.innerHTML = "";
     usuarios.forEach((usuario) => {
@@ -30,15 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const pegaURL = new URL(window.location);
     const id = pegaURL.searchParams.get("id");
 
-    fetch(
-      `https://iaragamesbackend-production-d2b5.up.railway.app/usuario/${id}`
-    )
+    fetch(`http://localhost:8081/usuario/${id}`)
       .then((response) => response.json())
       .then((usuario) => {
         document.getElementById("nome").value = usuario.nome;
         document.getElementById("email").value = usuario.email;
         document.getElementById("senha").value = ""; // Deixe o campo de senha vazio
-        usuarioForm.action = `https://iaragamesbackend-production-d2b5.up.railway.app/usuario/${id}`;
+        usuarioForm.action = `http://localhost:8081/usuario/${id}`;
         usuarioForm.dataset.method = "PUT"; // Armazena o método no dataset do formulário
       });
   }
@@ -51,10 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função para deletar usuário
   window.deleteUsuario = async function (id) {
     if (confirm("Tem certeza que deseja excluir?")) {
-      await fetch(
-        `https://iaragamesbackend-production-d2b5.up.railway.app/usuario/${id}`,
-        { method: "DELETE" }
-      );
+      await fetch(`http://localhost:8081/usuario/${id}`, { method: "DELETE" });
       loadUsuarios();
     }
   };
@@ -71,9 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const method = usuarioForm.dataset.method || "POST";
       const url =
-        method === "PUT"
-          ? usuarioForm.action
-          : "https://iaragamesbackend-production-d2b5.up.railway.app/usuario";
+        method === "PUT" ? usuarioForm.action : "http://localhost:8081/usuario";
       const options = {
         method: method,
         headers: { "Content-Type": "application/json" },
@@ -109,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const pegaURL = new URL(window.location);
       const id = pegaURL.searchParams.get("id");
 
-      const url = `https://iaragamesbackend-production-d2b5.up.railway.app/usuario/${id}`;
+      const url = `http://localhost:8081/usuario/${id}`;
       const options = {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
